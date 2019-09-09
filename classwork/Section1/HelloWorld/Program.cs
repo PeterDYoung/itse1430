@@ -6,17 +6,39 @@ namespace HelloWorld
     {
         static void Main ( /*string[] args*/ )
         {
-            String title, description;
-            int runLength, releaseYear;
-            bool hasSeen;
+            bool quit = false;
+            while (!quit){ 
+                String title, description;
+                int runLength, releaseYear;
+                bool hasSeen;
 
-            Char input = DisplayMenu ();
-            if (input == 'A')
-            {
-                AddMovie ();
-            } else
-            {
+                Char input = DisplayMenu ();
+                switch (input){
+                    case 'A':
+                    AddMovie ();
+                    break;
+                    case 'D':
+                    DisplayMovie ();
+                    break;
+                    case 'R':
+                    RemoveMovie ();
+                    break;
+                    case 'Q':
+                    {
+                        quit = true;
+                        break;
+                    }
+                    default:
+                    Console.WriteLine ("Not supported");
+                    break;
+                };
+                /*if (input == 'A')
+                {
+                    AddMovie ();
+                } else
+                {
 
+                }*/
             }
         }
         static void DisplayMovie () {
@@ -33,6 +55,16 @@ namespace HelloWorld
 
 
         }
+        private static void RemoveMovie (){
+            //Confirm removal
+            //Please DONT do this expression == true, expression
+            if (!ReadBoolean ($"Are you sure you want to remove {title}?"))
+                return;
+
+            //Remove movie
+            title = null;
+        }
+
         private static void AddMovie ()
         {
             Console.WriteLine ("Title: ");
