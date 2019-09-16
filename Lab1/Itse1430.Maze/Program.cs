@@ -2,8 +2,10 @@
 
 namespace Itse1430.Maze {
     class Program {
-        static void Main(string[] args) {
-            Console.WriteLine("Hello World!");
+        static void Main() {
+            Maze myMaze = new Maze();
+            Console.WriteLine (myMaze.ToString());
+            Console.WriteLine ("he");
         }
     }
 }
