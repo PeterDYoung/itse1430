@@ -78,10 +78,33 @@ namespace Itse1430.Maze
                     break;
             } 
         }
-        bool CanTraverse( Room destinationRoom) {
+        bool CanTraverse( Direction direction) {
+            switch (direction)
+            {
+                case Direction.south:
+                if (SouthDoor!= null)
+                    return true;
+                break;
+                case Direction.north:
+                if (NorthDoor!= null)
+                    return true;
+                break;
+                case Direction.west:
+                if (WestDoor!= null)
+                    return true;
+                break;
+                case Direction.east:
+                if (EastDoor!= null)
+                    return true;
+                break;
+                
+            }
             return false;
         }
-        public string ToString (){
+        public string GetDiscription (){
+            return "";
+        }
+        public override string ToString (){
             return Coord.Item1+", "+Coord.Item2;
         }
     }

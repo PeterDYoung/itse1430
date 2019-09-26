@@ -8,19 +8,13 @@ namespace Itse1430.Maze
     {
         private List<Room> _roomList;
         private Room _currRoom;
-        private bool _faceNorth;
-        private bool _faceEast;
-        private bool _faceSouth;
-        private bool _faceWest;
+        private Direction _heading;
+        
         private Room _endRoom;
         private Room _startRoom;
 
         internal List<Room> RoomList { get => _roomList; set => _roomList=value; }
         internal Room CurrRoom { get => _currRoom; set => _currRoom=value; }
-        public bool FaceEast { get => _faceEast; set => _faceEast=value; }
-        public bool FaceNorth { get => _faceNorth; set => _faceNorth=value; }
-        public bool FaceSouth { get => _faceSouth; set => _faceSouth=value; }
-        public bool FaceWest { get => _faceWest; set => _faceWest=value; }
         internal Room EndRoom { get => _endRoom; set => _endRoom=value; }
         internal Room StartRoom { get => _startRoom; set => _startRoom=value; }
 
@@ -100,6 +94,8 @@ namespace Itse1430.Maze
             CurrRoom = new Room (CurrRoom, Direction.north); //1,4 END
             RoomList.Add (CurrRoom);
             EndRoom = CurrRoom;
+            CurrRoom= StartRoom;
+            _heading= Direction.north;
         }
         void Move ( string direction )
         {
@@ -115,7 +111,7 @@ namespace Itse1430.Maze
         }
 
         //□
-        public string ToString() {
+        public override string ToString() {
             RoomList.Sort ();
             RoomList.Reverse();
             string output = "";
