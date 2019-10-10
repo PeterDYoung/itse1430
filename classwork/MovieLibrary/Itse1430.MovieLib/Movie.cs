@@ -4,6 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
 namespace Itse1430.MovieLib
 {
     /// <summary>Represents movie data.</summary>
@@ -21,7 +27,7 @@ namespace Itse1430.MovieLib
             //null coalescing
             // !String.IsNullOrEmpty(_title) ? _title : ""
             get { return _title ?? ""; }
-            set { _title = value;  }
+            set { _title = value; }
         }
 
         /// <summary>Gets or sets the description of the movie.</summary>
@@ -90,15 +96,20 @@ namespace Itse1430.MovieLib
         }
         #endregion
 
+        public override string ToString ()
+        {
+            return $"{Title} ({ReleaseYear})";
+        }
+
         /// <summary>Validates the movie.</summary>
         /// <returns>An error message if validation fails or empty string otherwise.</returns>
         public string Validate ()
         {
             //`this` is implicit first parameter, represents instance
             //this.title == title
-            
+
             //Name is required
-            if (String.IsNullOrEmpty(this.Title))
+            if (String.IsNullOrEmpty (this.Title))
                 return "Title is required";
 
             //Release year >= 1900
@@ -110,7 +121,7 @@ namespace Itse1430.MovieLib
                 return "Run Length must be >= 0";
 
             //Rating is required
-            if (String.IsNullOrEmpty(Rating))
+            if (String.IsNullOrEmpty (Rating))
                 return "Rating is required";
 
             return "";
