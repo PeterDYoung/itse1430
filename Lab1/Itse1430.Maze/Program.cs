@@ -1,4 +1,6 @@
-﻿using System;
+﻿// Peter Young Itse1430 10/11/19
+
+using System;
 
 namespace Itse1430.Maze {
     enum Direction { north = 0, south = 2, east = 1, west = 3 };
