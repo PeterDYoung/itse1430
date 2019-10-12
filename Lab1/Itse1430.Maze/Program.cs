@@ -1,16 +1,20 @@
 ﻿using System;
 
 namespace Itse1430.Maze {
+    enum Direction { north = 0, south = 2, east = 1, west = 3 };
+    enum DirectionOffset {left = -1, forward = 0, right = 1, around = 2 };
     class Program {
         static void Main() {
             Maze myMaze = new Maze();
-            Console.WriteLine (myMaze.ToString());
-            Console.WriteLine ("he");
+            Console.WriteLine ("This is the maze");
+            Console.WriteLine (myMaze.GetMazePrintout ());
+            Console.WriteLine ("\n");
+            CommandParser (myMaze);
         }
 
-        static void CommandParser () {
+        static void CommandParser (Maze currMaze) {
             bool run = true;
-            while (!run){
+            while (run){               
                 Console.WriteLine ("Enter Command");
                 string currLine = Console.ReadLine ();
                 currLine = currLine.ToLower ();
@@ -18,53 +22,78 @@ namespace Itse1430.Maze {
                         continue;
                 switch (currLine){                   
                     case "q":
-                        run =false;
-                        break;
                     case "quit":
-                        run =false;
+                        run =Quit();
                         break;
                     case "h":
-                        HelpCommand ();
-                        break;
                     case "help":
-                        HelpCommand ();
+                        Help();
                         break;
                     case "f":
-                        //run =false;
-                        break;
+                    case "move forward":
                     case "moveforward":
-                        //run =false;
+                        currMaze.Move (DirectionOffset.forward);
                         break;
                     case "b":
-                        //run =false;
-                        break;
                     case "movebackward":
-                        //run =false;
+                    case "move backward":
+                        currMaze.Move (DirectionOffset.around);
                         break;
                     case "l":
-                        //run =false;
-                        break;
                     case "moveleft":
-                        //run =false;
+                    case "move left":
+                        currMaze.Move (DirectionOffset.left);
                         break;
                     case "r":
-                        //run =false;
-                        break;
+                    case "move right":
                     case "moveright":
-                        //run =false;
+                        currMaze.Move (DirectionOffset.right);
                         break;
-
+                    case "turn around":
+                        currMaze.Turn(DirectionOffset.around);
+                        break;
+                    case "turn right":
+                        currMaze.Turn (DirectionOffset.right);
+                        break;
+                    case "turn left":
+                        currMaze.Turn (DirectionOffset.left);
+                        break;
+                    case "look":
+                    case "k":
+                        currMaze.Examine ();
+                        break;
+                    default:
+                        Console.WriteLine ("Command not recognized");
+                        break;
                 }
 
             }
 
         }
-        static void HelpCommand () {
+        static bool Quit() {
+            Console.WriteLine ("Are you sure you wish to exit? (Y/N)");
+            string response = Console.ReadLine ().ToLower();
+            if (response=="y")
+                return false;
+            return true;
+        }
+        static void Help() {
             string output = "";
-            output+= "(H)elp".PadRight (15, ' ');
+            output+= "\nCommands\n";
+            output+= "(H)elp".PadRight (14, ' ');
             output+= "(Q)uit".PadRight (15, ' ');
-            output+= "Move(F)orward".PadRight (15, ' ');
+            output+= "Loo(k)".PadRight (15, ' ');
+            output+= "\nTurn Around".PadRight (15, ' ');
+            output+= "Turn Right".PadRight (15, ' ');
+            output+= "Turn Left".PadRight (15, ' ');
+
+            output+= "\nMove(L)eft".PadRight (15, ' ');
+            output+= "Move(R)ight".PadRight (15, ' ');
+            output+= "Move(B)ackward".PadRight (15, ' ');
+            output+= "\nMove(F)orward".PadRight (15, ' ');
+            output+= "\n";
             Console.WriteLine (output);
         }
+        
     }
 }

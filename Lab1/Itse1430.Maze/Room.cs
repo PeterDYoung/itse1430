@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Itse1430.Maze
 {
-    enum Direction { north = 0, south = 2, east = 1, west = 3};
+    
     class Room : IComparable<Room>{
 
         private Tuple<int, int> _coord;

@@ -14,9 +14,10 @@ namespace Itse1430.Maze
         private Room _startRoom;
 
         internal List<Room> RoomList { get => _roomList; set => _roomList=value; }
-        internal Room CurrRoom { get => _currRoom; set => _currRoom=value; }
+        public Room CurrRoom { get => _currRoom; set => _currRoom=value; }
         internal Room EndRoom { get => _endRoom; set => _endRoom=value; }
         internal Room StartRoom { get => _startRoom; set => _startRoom=value; }
+        internal Direction Heading { get => _heading; set => _heading=value; }
 
         public Maze ()
         {
@@ -97,21 +98,53 @@ namespace Itse1430.Maze
             CurrRoom= StartRoom;
             _heading= Direction.north;
         }
-        void Move ( string direction )
+        public void Move ( DirectionOffset direction)
         {
-
+            Heading = (Direction)(((int)Heading + 4 + (int)direction)%4);
+            switch (Heading)
+            {
+                case Direction.north:
+                    if(CurrRoom.NorthDoor==null)
+                        break;
+                    CurrRoom=CurrRoom.NorthDoor;
+                    break;
+                case Direction.east:
+                    if (CurrRoom.EastDoor==null)
+                        break;
+                    CurrRoom=CurrRoom.EastDoor;
+                    break;
+                case Direction.south:
+                    if (CurrRoom.SouthDoor==null)
+                        break;
+                    CurrRoom=CurrRoom.SouthDoor;
+                    break;
+                case Direction.west:
+                    if (CurrRoom.WestDoor==null)
+                        break;
+                    CurrRoom=CurrRoom.WestDoor;
+                    break;
+            }
+            if (CurrRoom == EndRoom)
+            {
+                Console.WriteLine ("You have reached the end of the maze press enter to quit");
+                Console.ReadLine ();
+                Environment.Exit (0);
+            } else{
+                Console.WriteLine ("You enter a room labeled {0}", CurrRoom.ToString());
+            }
         }
-        void Turn ( string direction )
+        public void Turn ( DirectionOffset direction )
         {
-
+            Heading = (Direction)(((int)Heading + 4 + (int)direction)%4);
+            Console.WriteLine("You are facing {0}", Heading.ToString());
         }
-        void Examine ()
+        public void Examine ()
         {
-
+            Console.WriteLine ("You look around and see a dimly lit room with the numbers {0} writen on the ground and you are facing {1}", CurrRoom.ToString(), Heading.ToString());
         }
 
         //□
-        public override string ToString() {
+        public  string GetMazePrintout () {
             RoomList.Sort ();
             RoomList.Reverse();
             string output = "";
@@ -207,7 +240,7 @@ namespace Itse1430.Maze
 
 
 
-            return output+"asdsadasdasd";
+            return output;
         }
     }
 }
