@@ -146,6 +146,11 @@ namespace Itse1430.MovieLib.Host
         }
 
         private MovieDatabase _movies = new MovieDatabase ();
+
+        private void fileToolStripMenuItem_Click ( object sender, EventArgs e )
+        {
+
+        }
     }
 }
 
