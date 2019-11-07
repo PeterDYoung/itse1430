@@ -1,0 +1,103 @@
+{
+  "Races": [
+    {
+      "Name": "Dwarf",
+      "RacialBonus": [
+        0,
+        0,
+        2,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "Name": "Elf",
+      "RacialBonus": [
+        0,
+        2,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "Name": "Halfling",
+      "RacialBonus": [
+        0,
+        2,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "Name": "Human",
+      "RacialBonus": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "Name": "Dragonborn",
+      "RacialBonus": [
+        2,
+        0,
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "Name": "Gnome",
+      "RacialBonus": [
+        0,
+        0,
+        0,
+        2,
+        0,
+        0
+      ]
+    },
+    {
+      "Name": "HalfElf",
+      "RacialBonus": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        2
+      ]
+    },
+    {
+      "Name": "HalfOrc",
+      "RacialBonus": [
+        2,
+        0,
+        1,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "Name": "Tiefling",
+      "RacialBonus": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        2
+      ]
+    }
+  ]
+}
