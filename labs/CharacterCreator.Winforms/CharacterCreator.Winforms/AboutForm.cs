@@ -1,4 +1,7 @@
-﻿using System;
+﻿//Peter Young
+//11/8/19
+//Cosc1430
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;

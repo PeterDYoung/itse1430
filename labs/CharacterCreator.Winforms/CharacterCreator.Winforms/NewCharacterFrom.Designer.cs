@@ -36,13 +36,26 @@
             this.label16 = new System.Windows.Forms.Label();
             this.textBoxName = new System.Windows.Forms.TextBox();
             this.tabPageClassRace = new System.Windows.Forms.TabPage();
-            this.label19 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.comboBoxClass = new System.Windows.Forms.ComboBox();
             this.label18 = new System.Windows.Forms.Label();
             this.comboBoxRace = new System.Windows.Forms.ComboBox();
+            this.label19 = new System.Windows.Forms.Label();
             this.tabPageAbilityScores = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.label28 = new System.Windows.Forms.Label();
+            this.totalCHALabel = new System.Windows.Forms.Label();
+            this.totalWISLabel = new System.Windows.Forms.Label();
+            this.totalCONLabel = new System.Windows.Forms.Label();
+            this.totalINTLabel = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
+            this.totalDEXLabel = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
             this.rbChaLabel = new System.Windows.Forms.Label();
             this.rbSTRLabel = new System.Windows.Forms.Label();
             this.rbIntLabel = new System.Windows.Forms.Label();
@@ -59,10 +72,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.baseChaNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.baseCHANumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.baseWISNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.baseINTNumericUpDown = new System.Windows.Forms.NumericUpDown();
-            this.baseConNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.baseCONNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.baseDEXNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -70,35 +83,26 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.rbWisLabel = new System.Windows.Forms.Label();
-            this.errorProviderNameBox = new System.Windows.Forms.ErrorProvider(this.components);
-            this.label21 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
-            this.label25 = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
-            this.label27 = new System.Windows.Forms.Label();
             this.totalSTRLabel = new System.Windows.Forms.Label();
-            this.totalDEXLabel = new System.Windows.Forms.Label();
-            this.totalCONLabel = new System.Windows.Forms.Label();
-            this.totalINTLabel = new System.Windows.Forms.Label();
-            this.totalWISLabel = new System.Windows.Forms.Label();
-            this.totalCHALabel = new System.Windows.Forms.Label();
-            this.label28 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.exitTabPage = new System.Windows.Forms.TabPage();
+            this.buttonExitNoSave = new System.Windows.Forms.Button();
+            this.buttonSaveExit = new System.Windows.Forms.Button();
+            this.errorProviderNameBox = new System.Windows.Forms.ErrorProvider(this.components);
             this.tabControlNewCharacter.SuspendLayout();
             this.tabPageBio.SuspendLayout();
             this.tabPageClassRace.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.tabPageAbilityScores.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.baseChaNumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.baseCHANumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.baseWISNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.baseINTNumericUpDown)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.baseConNumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.baseCONNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.baseDEXNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.baseSTRNumericUpDown)).BeginInit();
+            this.exitTabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderNameBox)).BeginInit();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControlNewCharacter
@@ -106,6 +110,7 @@
             this.tabControlNewCharacter.Controls.Add(this.tabPageBio);
             this.tabControlNewCharacter.Controls.Add(this.tabPageClassRace);
             this.tabControlNewCharacter.Controls.Add(this.tabPageAbilityScores);
+            this.tabControlNewCharacter.Controls.Add(this.exitTabPage);
             this.tabControlNewCharacter.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControlNewCharacter.Location = new System.Drawing.Point(0, 0);
             this.tabControlNewCharacter.Name = "tabControlNewCharacter";
@@ -172,17 +177,20 @@
             this.tabPageClassRace.Text = "Class/Race";
             this.tabPageClassRace.UseVisualStyleBackColor = true;
             // 
-            // label19
+            // panel1
             // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(251, 66);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(62, 25);
-            this.label19.TabIndex = 3;
-            this.label19.Text = "Class";
+            this.panel1.Controls.Add(this.comboBoxClass);
+            this.panel1.Controls.Add(this.label18);
+            this.panel1.Controls.Add(this.comboBoxRace);
+            this.panel1.Controls.Add(this.label19);
+            this.panel1.Location = new System.Drawing.Point(134, 102);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(478, 191);
+            this.panel1.TabIndex = 4;
             // 
             // comboBoxClass
             // 
+            this.comboBoxClass.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxClass.FormattingEnabled = true;
             this.comboBoxClass.Location = new System.Drawing.Point(261, 94);
             this.comboBoxClass.Name = "comboBoxClass";
@@ -200,12 +208,22 @@
             // 
             // comboBoxRace
             // 
+            this.comboBoxRace.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxRace.FormattingEnabled = true;
             this.comboBoxRace.Location = new System.Drawing.Point(42, 94);
             this.comboBoxRace.Name = "comboBoxRace";
             this.comboBoxRace.Size = new System.Drawing.Size(183, 32);
             this.comboBoxRace.TabIndex = 0;
             this.comboBoxRace.SelectedIndexChanged += new System.EventHandler(this.comboBoxRace_SelectedIndexChanged);
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(251, 66);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(62, 25);
+            this.label19.TabIndex = 3;
+            this.label19.Text = "Class";
             // 
             // tabPageAbilityScores
             // 
@@ -265,10 +283,10 @@
             this.tableLayoutPanel1.Controls.Add(this.label2, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.label8, 2, 2);
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.baseChaNumericUpDown, 1, 6);
+            this.tableLayoutPanel1.Controls.Add(this.baseCHANumericUpDown, 1, 6);
             this.tableLayoutPanel1.Controls.Add(this.baseWISNumericUpDown, 1, 5);
             this.tableLayoutPanel1.Controls.Add(this.baseINTNumericUpDown, 1, 4);
-            this.tableLayoutPanel1.Controls.Add(this.baseConNumericUpDown, 1, 3);
+            this.tableLayoutPanel1.Controls.Add(this.baseCONNumericUpDown, 1, 3);
             this.tableLayoutPanel1.Controls.Add(this.baseDEXNumericUpDown, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.label6, 0, 6);
             this.tableLayoutPanel1.Controls.Add(this.label5, 0, 5);
@@ -289,6 +307,114 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(755, 294);
             this.tableLayoutPanel1.TabIndex = 6;
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(397, 0);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(113, 20);
+            this.label28.TabIndex = 9;
+            this.label28.Text = "Total Score";
+            // 
+            // totalCHALabel
+            // 
+            this.totalCHALabel.AutoSize = true;
+            this.totalCHALabel.Location = new System.Drawing.Point(397, 245);
+            this.totalCHALabel.Name = "totalCHALabel";
+            this.totalCHALabel.Size = new System.Drawing.Size(23, 25);
+            this.totalCHALabel.TabIndex = 9;
+            this.totalCHALabel.Text = "0";
+            // 
+            // totalWISLabel
+            // 
+            this.totalWISLabel.AutoSize = true;
+            this.totalWISLabel.Location = new System.Drawing.Point(397, 200);
+            this.totalWISLabel.Name = "totalWISLabel";
+            this.totalWISLabel.Size = new System.Drawing.Size(23, 25);
+            this.totalWISLabel.TabIndex = 10;
+            this.totalWISLabel.Text = "0";
+            // 
+            // totalCONLabel
+            // 
+            this.totalCONLabel.AutoSize = true;
+            this.totalCONLabel.Location = new System.Drawing.Point(397, 110);
+            this.totalCONLabel.Name = "totalCONLabel";
+            this.totalCONLabel.Size = new System.Drawing.Size(23, 25);
+            this.totalCONLabel.TabIndex = 10;
+            this.totalCONLabel.Text = "0";
+            // 
+            // totalINTLabel
+            // 
+            this.totalINTLabel.AutoSize = true;
+            this.totalINTLabel.Location = new System.Drawing.Point(397, 155);
+            this.totalINTLabel.Name = "totalINTLabel";
+            this.totalINTLabel.Size = new System.Drawing.Size(23, 25);
+            this.totalINTLabel.TabIndex = 9;
+            this.totalINTLabel.Text = "0";
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(367, 245);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(24, 25);
+            this.label27.TabIndex = 13;
+            this.label27.Text = "=";
+            // 
+            // totalDEXLabel
+            // 
+            this.totalDEXLabel.AutoSize = true;
+            this.totalDEXLabel.Location = new System.Drawing.Point(397, 65);
+            this.totalDEXLabel.Name = "totalDEXLabel";
+            this.totalDEXLabel.Size = new System.Drawing.Size(23, 25);
+            this.totalDEXLabel.TabIndex = 9;
+            this.totalDEXLabel.Text = "0";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(367, 200);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(24, 25);
+            this.label26.TabIndex = 13;
+            this.label26.Text = "=";
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(367, 155);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(24, 25);
+            this.label25.TabIndex = 13;
+            this.label25.Text = "=";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(367, 110);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(24, 25);
+            this.label23.TabIndex = 13;
+            this.label23.Text = "=";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(367, 65);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(24, 25);
+            this.label21.TabIndex = 13;
+            this.label21.Text = "=";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(367, 20);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(24, 25);
+            this.label22.TabIndex = 14;
+            this.label22.Text = "=";
             // 
             // rbChaLabel
             // 
@@ -439,42 +565,92 @@
             // 
             // baseChaNumericUpDown
             // 
-            this.baseChaNumericUpDown.Location = new System.Drawing.Point(124, 248);
-            this.baseChaNumericUpDown.Name = "baseChaNumericUpDown";
-            this.baseChaNumericUpDown.Size = new System.Drawing.Size(60, 29);
-            this.baseChaNumericUpDown.TabIndex = 11;
-            this.baseChaNumericUpDown.ValueChanged += new System.EventHandler(this.baseChaNumericUpDown_ValueChanged);
+            this.baseCHANumericUpDown.Location = new System.Drawing.Point(124, 248);
+            this.baseCHANumericUpDown.Maximum = new decimal(new int[] {
+            20,
+            0,
+            0,
+            0});
+            this.baseCHANumericUpDown.Name = "baseChaNumericUpDown";
+            this.baseCHANumericUpDown.Size = new System.Drawing.Size(60, 29);
+            this.baseCHANumericUpDown.TabIndex = 11;
+            this.baseCHANumericUpDown.Value = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.baseCHANumericUpDown.ValueChanged += new System.EventHandler(this.baseChaNumericUpDown_ValueChanged);
             // 
             // baseWISNumericUpDown
             // 
             this.baseWISNumericUpDown.Location = new System.Drawing.Point(124, 203);
+            this.baseWISNumericUpDown.Maximum = new decimal(new int[] {
+            20,
+            0,
+            0,
+            0});
             this.baseWISNumericUpDown.Name = "baseWISNumericUpDown";
             this.baseWISNumericUpDown.Size = new System.Drawing.Size(60, 29);
             this.baseWISNumericUpDown.TabIndex = 10;
+            this.baseWISNumericUpDown.Value = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
             this.baseWISNumericUpDown.ValueChanged += new System.EventHandler(this.baseWISNumericUpDown_ValueChanged);
             // 
             // baseINTNumericUpDown
             // 
             this.baseINTNumericUpDown.Location = new System.Drawing.Point(124, 158);
+            this.baseINTNumericUpDown.Maximum = new decimal(new int[] {
+            20,
+            0,
+            0,
+            0});
             this.baseINTNumericUpDown.Name = "baseINTNumericUpDown";
             this.baseINTNumericUpDown.Size = new System.Drawing.Size(60, 29);
             this.baseINTNumericUpDown.TabIndex = 9;
+            this.baseINTNumericUpDown.Value = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
             this.baseINTNumericUpDown.ValueChanged += new System.EventHandler(this.baseINTNumericUpDown_ValueChanged);
             // 
             // baseConNumericUpDown
             // 
-            this.baseConNumericUpDown.Location = new System.Drawing.Point(124, 113);
-            this.baseConNumericUpDown.Name = "baseConNumericUpDown";
-            this.baseConNumericUpDown.Size = new System.Drawing.Size(60, 29);
-            this.baseConNumericUpDown.TabIndex = 8;
-            this.baseConNumericUpDown.ValueChanged += new System.EventHandler(this.baseConNumericUpDown_ValueChanged);
+            this.baseCONNumericUpDown.Location = new System.Drawing.Point(124, 113);
+            this.baseCONNumericUpDown.Maximum = new decimal(new int[] {
+            20,
+            0,
+            0,
+            0});
+            this.baseCONNumericUpDown.Name = "baseConNumericUpDown";
+            this.baseCONNumericUpDown.Size = new System.Drawing.Size(60, 29);
+            this.baseCONNumericUpDown.TabIndex = 8;
+            this.baseCONNumericUpDown.Value = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.baseCONNumericUpDown.ValueChanged += new System.EventHandler(this.baseConNumericUpDown_ValueChanged);
             // 
             // baseDEXNumericUpDown
             // 
             this.baseDEXNumericUpDown.Location = new System.Drawing.Point(124, 68);
+            this.baseDEXNumericUpDown.Maximum = new decimal(new int[] {
+            20,
+            0,
+            0,
+            0});
             this.baseDEXNumericUpDown.Name = "baseDEXNumericUpDown";
             this.baseDEXNumericUpDown.Size = new System.Drawing.Size(60, 29);
             this.baseDEXNumericUpDown.TabIndex = 7;
+            this.baseDEXNumericUpDown.Value = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
             this.baseDEXNumericUpDown.ValueChanged += new System.EventHandler(this.baseDEXNumericUpDown_ValueChanged);
             // 
             // label6
@@ -498,9 +674,19 @@
             // baseSTRNumericUpDown
             // 
             this.baseSTRNumericUpDown.Location = new System.Drawing.Point(124, 23);
+            this.baseSTRNumericUpDown.Maximum = new decimal(new int[] {
+            20,
+            0,
+            0,
+            0});
             this.baseSTRNumericUpDown.Name = "baseSTRNumericUpDown";
             this.baseSTRNumericUpDown.Size = new System.Drawing.Size(60, 29);
             this.baseSTRNumericUpDown.TabIndex = 6;
+            this.baseSTRNumericUpDown.Value = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
             this.baseSTRNumericUpDown.ValueChanged += new System.EventHandler(this.baseSTRNumericUpDown_ValueChanged);
             // 
             // label7
@@ -530,65 +716,6 @@
             this.rbWisLabel.TabIndex = 12;
             this.rbWisLabel.Text = "0";
             // 
-            // errorProviderNameBox
-            // 
-            this.errorProviderNameBox.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
-            this.errorProviderNameBox.ContainerControl = this;
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(367, 65);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(24, 25);
-            this.label21.TabIndex = 13;
-            this.label21.Text = "=";
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(367, 20);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(24, 25);
-            this.label22.TabIndex = 14;
-            this.label22.Text = "=";
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(367, 110);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(24, 25);
-            this.label23.TabIndex = 13;
-            this.label23.Text = "=";
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(367, 155);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(24, 25);
-            this.label25.TabIndex = 13;
-            this.label25.Text = "=";
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(367, 200);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(24, 25);
-            this.label26.TabIndex = 13;
-            this.label26.Text = "=";
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(367, 245);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(24, 25);
-            this.label27.TabIndex = 13;
-            this.label27.Text = "=";
-            // 
             // totalSTRLabel
             // 
             this.totalSTRLabel.AutoSize = true;
@@ -598,70 +725,42 @@
             this.totalSTRLabel.TabIndex = 9;
             this.totalSTRLabel.Text = "0";
             // 
-            // totalDEXLabel
+            // exitTabPage
             // 
-            this.totalDEXLabel.AutoSize = true;
-            this.totalDEXLabel.Location = new System.Drawing.Point(397, 65);
-            this.totalDEXLabel.Name = "totalDEXLabel";
-            this.totalDEXLabel.Size = new System.Drawing.Size(23, 25);
-            this.totalDEXLabel.TabIndex = 9;
-            this.totalDEXLabel.Text = "0";
+            this.exitTabPage.Controls.Add(this.buttonExitNoSave);
+            this.exitTabPage.Controls.Add(this.buttonSaveExit);
+            this.exitTabPage.Location = new System.Drawing.Point(4, 33);
+            this.exitTabPage.Name = "exitTabPage";
+            this.exitTabPage.Padding = new System.Windows.Forms.Padding(3);
+            this.exitTabPage.Size = new System.Drawing.Size(792, 413);
+            this.exitTabPage.TabIndex = 3;
+            this.exitTabPage.Text = "Save/Exit";
+            this.exitTabPage.UseVisualStyleBackColor = true;
             // 
-            // totalCONLabel
+            // buttonExitNoSave
             // 
-            this.totalCONLabel.AutoSize = true;
-            this.totalCONLabel.Location = new System.Drawing.Point(397, 110);
-            this.totalCONLabel.Name = "totalCONLabel";
-            this.totalCONLabel.Size = new System.Drawing.Size(23, 25);
-            this.totalCONLabel.TabIndex = 10;
-            this.totalCONLabel.Text = "0";
+            this.buttonExitNoSave.Location = new System.Drawing.Point(420, 155);
+            this.buttonExitNoSave.Name = "buttonExitNoSave";
+            this.buttonExitNoSave.Size = new System.Drawing.Size(223, 100);
+            this.buttonExitNoSave.TabIndex = 1;
+            this.buttonExitNoSave.Text = "Exit without Saving";
+            this.buttonExitNoSave.UseVisualStyleBackColor = true;
+            this.buttonExitNoSave.Click += new System.EventHandler(this.buttonExitNoSave_Click);
             // 
-            // totalINTLabel
+            // buttonSaveExit
             // 
-            this.totalINTLabel.AutoSize = true;
-            this.totalINTLabel.Location = new System.Drawing.Point(397, 155);
-            this.totalINTLabel.Name = "totalINTLabel";
-            this.totalINTLabel.Size = new System.Drawing.Size(23, 25);
-            this.totalINTLabel.TabIndex = 9;
-            this.totalINTLabel.Text = "0";
+            this.buttonSaveExit.Location = new System.Drawing.Point(118, 155);
+            this.buttonSaveExit.Name = "buttonSaveExit";
+            this.buttonSaveExit.Size = new System.Drawing.Size(223, 100);
+            this.buttonSaveExit.TabIndex = 0;
+            this.buttonSaveExit.Text = "Save and Exit";
+            this.buttonSaveExit.UseVisualStyleBackColor = true;
+            this.buttonSaveExit.Click += new System.EventHandler(this.buttonSaveExit_Click);
             // 
-            // totalWISLabel
+            // errorProviderNameBox
             // 
-            this.totalWISLabel.AutoSize = true;
-            this.totalWISLabel.Location = new System.Drawing.Point(397, 200);
-            this.totalWISLabel.Name = "totalWISLabel";
-            this.totalWISLabel.Size = new System.Drawing.Size(23, 25);
-            this.totalWISLabel.TabIndex = 10;
-            this.totalWISLabel.Text = "0";
-            // 
-            // totalCHALabel
-            // 
-            this.totalCHALabel.AutoSize = true;
-            this.totalCHALabel.Location = new System.Drawing.Point(397, 245);
-            this.totalCHALabel.Name = "totalCHALabel";
-            this.totalCHALabel.Size = new System.Drawing.Size(23, 25);
-            this.totalCHALabel.TabIndex = 9;
-            this.totalCHALabel.Text = "0";
-            // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(397, 0);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(113, 20);
-            this.label28.TabIndex = 9;
-            this.label28.Text = "Total Score";
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.comboBoxClass);
-            this.panel1.Controls.Add(this.label18);
-            this.panel1.Controls.Add(this.comboBoxRace);
-            this.panel1.Controls.Add(this.label19);
-            this.panel1.Location = new System.Drawing.Point(134, 102);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(478, 191);
-            this.panel1.TabIndex = 4;
+            this.errorProviderNameBox.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errorProviderNameBox.ContainerControl = this;
             // 
             // NewCharacterFrom
             // 
@@ -669,26 +768,31 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.tabControlNewCharacter);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "NewCharacterFrom";
+            this.ShowIcon = false;
             this.Text = "Create New Character";
             this.Load += new System.EventHandler(this.NewCharacterFrom_Load);
             this.tabControlNewCharacter.ResumeLayout(false);
             this.tabPageBio.ResumeLayout(false);
             this.tabPageBio.PerformLayout();
             this.tabPageClassRace.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.tabPageAbilityScores.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.baseChaNumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.baseCHANumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.baseWISNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.baseINTNumericUpDown)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.baseConNumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.baseCONNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.baseDEXNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.baseSTRNumericUpDown)).EndInit();
+            this.exitTabPage.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderNameBox)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -706,10 +810,10 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.NumericUpDown baseChaNumericUpDown;
+        private System.Windows.Forms.NumericUpDown baseCHANumericUpDown;
         private System.Windows.Forms.NumericUpDown baseWISNumericUpDown;
         private System.Windows.Forms.NumericUpDown baseINTNumericUpDown;
-        private System.Windows.Forms.NumericUpDown baseConNumericUpDown;
+        private System.Windows.Forms.NumericUpDown baseCONNumericUpDown;
         private System.Windows.Forms.NumericUpDown baseDEXNumericUpDown;
         private System.Windows.Forms.NumericUpDown baseSTRNumericUpDown;
         private System.Windows.Forms.Label label13;
@@ -751,5 +855,8 @@
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label totalSTRLabel;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.TabPage exitTabPage;
+        private System.Windows.Forms.Button buttonExitNoSave;
+        private System.Windows.Forms.Button buttonSaveExit;
     }
 }
