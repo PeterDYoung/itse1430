@@ -45,6 +45,7 @@ namespace CharacterCreator
         public string Discription { get; set; }
         public Races Race { get; set; }
         public Classes Class { get; set; }
+        public int ID { get; set; }
         #endregion
         #region get/set fields 
         public int Strength { get => _strength; set => _strength=value; }
@@ -56,6 +57,7 @@ namespace CharacterCreator
         public int MaxHP { get => _maxHP; set => _maxHP=value; }
         public int Speed { get => _speed; set => _speed=value; }
         #endregion
+        //these are oten changed and if I were to epand fuctionality i dont want them as properties
         int _strength;
         int _dexterity;
         int _constitution;
