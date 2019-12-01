@@ -3,7 +3,9 @@
  */
 using System;
 using System.ComponentModel.DataAnnotations;
+using System.Configuration;
 using System.Windows.Forms;
+using Nile.Stores.Sql;
 
 namespace Nile.Windows
 {
@@ -21,6 +23,9 @@ namespace Nile.Windows
         {
             base.OnLoad(e);
 
+            var connString = ConfigurationManager.ConnectionStrings["ProductDatabase"];
+            _database = new SqlProductDatabase (connString.ConnectionString);
+            
             _gridProducts.AutoGenerateColumns = false;
 
             UpdateList();
@@ -141,7 +146,7 @@ namespace Nile.Windows
             } catch (ValidationException ex) {
                 MessageBox.Show(ex.Message, "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             } catch (Exception ex) {
-                MessageBox.Show("Save failed", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Save failed"+ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             };
         }
 
@@ -157,11 +162,11 @@ namespace Nile.Windows
         {
             //TODO: Handle errors
             //unsure what there is to catch here doesnt this just update ui after we do things
-
+            
             _bsProducts.DataSource = _database.GetAll();
         }
 
-        private readonly IProductDatabase _database = new Nile.Stores.MemoryProductDatabase();
+        private  IProductDatabase _database;
         #endregion
 
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e) {

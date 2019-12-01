@@ -1,6 +1,5 @@
-/*
- * ITSE 1430
- */
+// Peter Young
+// itse 1430
 using System;
 using System.Collections.Generic;
 

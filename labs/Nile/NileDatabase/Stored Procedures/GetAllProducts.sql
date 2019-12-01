@@ -4,4 +4,5 @@ AS BEGIN
 
     SELECT Id, Name, Price, Description, IsDiscontinued
     FROM Products
+    ORDER BY Name
 END
